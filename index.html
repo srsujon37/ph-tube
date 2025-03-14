@@ -5,8 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PH TUBE</title>
     <link rel="shortcut icon" href="./Asset/Logo.png" type="image/x-icon">
+    <!-- daisyUI-->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- tailwindcss -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+    <style>
+    .active{
+        color: white;
+        background: #FF1F3D;
+    }
+
+    </style>
 </head>
+
 <body>
+    <header>
+        <nav class="w-11/12 mx-auto flex justify-between border-b border-[#17171733] space-y-5 pt-7">
+            <div class="logo">
+                <img class="w-[150px]" src="./Asset/Logo.png" alt="">
+            </div>
+            <div class="sort">
+                <label class="input">
+                    <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></g></svg>
+                    <input type="search" required placeholder="Search"/>
+                  </label>
+            </div>
+            <div class="blog">
+                <button class="btn btn-neutral bg-[#FF1F3D] border-none">
+                    Sort by view
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <nav id="category-container" class="flex py-5 justify-center gap-5 ">
+
+        <button id="btn-all" onclick="loadVideos()" class="btn btn-sm">All</button>
+
+    </nav>
+    <section id="video-container" class="w-11/12 mx-auto grid grid-cols-4 gap-5">
+
+        <div class=" col-span-full flex flex-col justify-center items-center text-center py-20">
+            <img class="w-[140px] h-[140px]" src="./Asset/Icon.png" alt="">
+            <h2 class="text-3xl font-bold text-[#171717]">Oops!! Sorry, There is no <br>content here</h2>
+        </div>
+    </section>
+
+    <!-- Open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+    <dialog id="video_details" class="modal">
+     <div class="modal-box">
+        <div id="details-container">
+
+        </div>
+        <div class="modal-action">
+        <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn">Close</button>
+        </form>
+        </div>
+     </div>
+    </dialog>
+
+
+
+
     
+    <script src="./script/index.js"></script>
 </body>
+
 </html>
+
+
